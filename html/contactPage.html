@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Famous Pirates</title>
+        <link rel="stylesheet" href="css/main.css" />
+        <link rel="stylesheet" href="css/contact.css" />
+    </head>
+    <body>
+        <header>Pirates</header>
+        <main>
+            <nav>
+                <a href="SirFrancisDrake.html">Sir Francis Drake</a>
+                <a href="HenryMorgan.html">Henry Morgan</a>
+                <a href="Blackbeard.html">Blackbeard</a>
+            </nav>
+            <section class="contact-form">
+                <form onkeyup="validate()">
+                    <label>Name:</label>
+                    <input type="text" name="name" class="name"/>
+                    <label>Email:</label>
+                    <input type="text" name="email" class="email"/>
+                    <label>Message:</label>
+                    <textarea name="message" rows="10" cols="30" class="message"></textarea>
+                    <input type="submit" value="Submit" class="submit" disabled/>
+                </form>
+            </section>
+            <section class="pirate-info">
+                <figure>
+                    <img src="img/oops.jpg" alt="underconstruction">
+                    <figcaption>UNDER CONSTRUCTION</figcaption>
+                </figure>
+            </section>
+        </main>
+        <footer>
+            <a href="contactPage.html">Contact webmaster</a>
+        </footer>
+        <script>
+            function validate(){
+                var name = document.querySelector(".name");
+                var email = document.querySelector(".email");
+                var message = document.querySelector(".message");
+                var submit = document.querySelector(".submit");
+
+                var valid = true;
+
+                if(name.value.length == 0){ valid = false }
+                if(email.value.length == 0){ valid = false }
+                if(message.value.length == 0){ valid = false }
+
+                if(valid == true){
+                    submit.removeAttribute("disabled");
+                } else {
+                    submit.setAttribute("disabled", "true");
+                }
+            }
+        </script>
+    </body>
+</html>
